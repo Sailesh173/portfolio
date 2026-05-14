@@ -156,15 +156,7 @@ nav {
     line-height: 1.8;
 }
 
-/* Bento Grid v4 (High-End) */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 450px);
-    gap: 2.5rem;
-    width: 100%;
-}
-
+/* Cinematic Bento v4.5 (High-End Visuals) */
 .project-card {
     position: relative;
     border-radius: 40px;
@@ -172,11 +164,8 @@ nav {
     background: #0a0a0a;
     border: 1px solid var(--glass-border);
     transition: var(--transition);
+    height: 100%;
 }
-
-.project-card.large { grid-column: span 8; grid-row: span 2; }
-.project-card.small { grid-column: span 4; grid-row: span 1; }
-.project-card.tall { grid-column: span 4; grid-row: span 2; }
 
 .project-bg {
     position: absolute;
@@ -184,27 +173,55 @@ nav {
     background-size: cover;
     background-position: center;
     z-index: 0;
-    filter: brightness(0.4) grayscale(0.5);
-    transition: var(--transition);
+    filter: brightness(0.3) saturate(0) contrast(1.2);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.8s ease;
 }
 
 .project-card:hover .project-bg {
-    filter: brightness(0.7) grayscale(0);
-    transform: scale(1.05);
+    filter: brightness(0.8) saturate(1) contrast(1);
+    transform: scale(1.1);
 }
 
+/* Luxury Gradient Overlay (Ensures text pop) */
 .project-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 100%);
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 0, 0, 0.6) 40%, 
+        rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.project-card:hover::after {
+    opacity: 0.8;
+}
+
+.project-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    filter: blur(150px);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.8s ease;
+    transform: translate(-50%, -50%);
+}
+
+.project-card:hover .project-core {
+    opacity: 0.15;
 }
 
 .project-content {
     position: relative;
     z-index: 10;
-    padding: 4rem;
+    padding: 3.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -212,23 +229,55 @@ nav {
 }
 
 .project-info h3 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 900;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+    transform: translateY(20px);
+    opacity: 0.8;
+    transition: var(--transition);
 }
 
-.project-card.large h3 { font-size: 4.5rem; }
+.project-card:hover h3 {
+    transform: translateY(0);
+    opacity: 1;
+    color: var(--primary);
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+    transition-delay: 0.1s;
+}
+
+.project-card:hover p {
+    transform: translateY(0);
+    opacity: 1;
+}
 
 .project-tags {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     margin-bottom: 2rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+    transition-delay: 0.2s;
+}
+
+.project-card:hover .project-tags {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .project-tags span {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 800;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
@@ -238,18 +287,32 @@ nav {
 
 .project-btn {
     align-self: flex-start;
-    padding: 1rem 2.5rem;
-    background: var(--primary);
-    color: #000;
+    padding: 0.8rem 2.2rem;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--primary);
     text-decoration: none;
     font-weight: 900;
-    border-radius: 15px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+    opacity: 0;
     transition: var(--transition);
+    transition-delay: 0.3s;
+}
+
+.project-card:hover .project-btn {
+    transform: translateY(0);
+    opacity: 1;
+    background: var(--primary);
+    color: #000;
 }
 
 .project-btn:hover {
-    background: #fff;
-    transform: scale(1.05);
+    background: #fff !important;
+    box-shadow: 0 0 30px var(--glass-glow);
 }
 
 /* Contact (Bridge) */
