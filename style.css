@@ -3,33 +3,19 @@
     Focus: Professional Brand, Storytelling, Premium Aesthetics, Dynamic Interactions
 */
 
+/* Luxury Cinematic Palette (Midnight Obsidian & Champagne Gold) */
 :root {
-    --bg-dark: #0a0a0f;
-    --bg-card: rgba(18, 18, 25, 0.6);
-    --primary: #00f2fe;
-    --secondary: #4facfe;
-    --accent: #ff0844;
-    --accent-secondary: #ffb199;
-    --text-main: #f8f9fa;
-    --text-dim: #94a3b8;
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-glow: rgba(0, 242, 254, 0.2);
-    --font-main: 'Outfit', sans-serif;
-    --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --noise: url("https://grainy-gradients.vercel.app/noise.svg");
-}
-
-body.light-mode {
-    --bg-dark: #f0f2f5;
-    --bg-card: rgba(255, 255, 255, 0.8);
-    --primary: #005bea;
-    --secondary: #00c6fb;
-    --text-main: #0f172a;
-    --text-dim: #475569;
-    --glass: rgba(0, 0, 0, 0.05);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --glass-glow: rgba(0, 91, 234, 0.2);
+    --primary: #d4af37; /* Champagne Gold */
+    --secondary: #f3e5ab; /* Soft Gold */
+    --accent: #ff4d00; /* Sunset Orange */
+    --bg-dark: #050505; /* Midnight Obsidian */
+    --bg-card: rgba(15, 15, 15, 0.7);
+    --text-main: #f0f0f0;
+    --text-dim: #a0a0a0;
+    --glass: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(212, 175, 55, 0.15);
+    --glass-glow: rgba(212, 175, 55, 0.1);
+    --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -41,18 +27,19 @@ body.light-mode {
 
 html {
     scroll-behavior: smooth;
+    overflow: hidden; /* Lock scroll for horizontal control */
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: var(--font-main);
-    line-height: 1.7;
-    overflow-x: hidden;
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    transition: background-color var(--transition), color var(--transition);
 }
 
+/* Background Cinematic Grain */
 body::before {
     content: "";
     position: fixed;
@@ -60,8 +47,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--noise);
-    opacity: 0.04;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    opacity: 0.05;
     pointer-events: none;
     z-index: 9999;
 }
