@@ -1,18 +1,20 @@
 /* 
-    Sailesh Kumar Mishra - Digital Portfolio v5.1 (Grid Fix)
+    Sailesh Kumar Mishra - RED VELVET EDITION v6.0
+    The Most Advanced Portfolio Rebuild
 */
 
 :root {
-    --bg-dark: #020202;
-    --bg-card: rgba(10, 10, 10, 0.9);
-    --primary: #d4af37; /* Champagne Gold */
-    --secondary: #f3e5ab; /* Soft Gold */
-    --accent: #ff4d00;
-    --text-main: #ffffff;
-    --text-dim: #888888;
-    --glass-border: rgba(212, 175, 55, 0.2);
-    --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    --font-main: 'Outfit', sans-serif;
+    --red-deep: #2a0000;
+    --red-velvet: #8b0000;
+    --red-bright: #ff3131;
+    --gold-rose: #e0b0ff;
+    --obsidian: #050505;
+    --text: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --glass: rgba(15, 0, 0, 0.7);
+    --glass-border: rgba(255, 49, 49, 0.2);
+    --font: 'Outfit', sans-serif;
+    --transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,128 +22,143 @@
 html { scroll-behavior: smooth; overflow-x: hidden; background: #000; }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-main);
+    background-color: var(--obsidian);
+    color: var(--text);
+    font-family: var(--font);
     overflow-x: hidden;
-    cursor: none;
+    line-height: 1.6;
 }
 
-/* Cinematic Background Mesh */
-#bg-canvas {
+/* 3D Background Container */
+#red-velvet-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.4;
+    background: radial-gradient(circle at center, #2a0000 0%, #000 100%);
 }
 
-.noise-overlay {
+.noise {
     position: fixed;
     inset: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
-    opacity: 0.03;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    opacity: 0.1;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1;
 }
 
 /* Custom Cursor */
 .cursor {
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
+    width: 12px;
+    height: 12px;
+    background: var(--red-bright);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 10000;
-    mix-blend-mode: exclusion;
-    box-shadow: 0 0 20px var(--primary);
+    box-shadow: 0 0 20px var(--red-bright);
+    transition: transform 0.1s ease;
 }
 
 .container { max-width: 1400px; margin: 0 auto; padding: 0 4rem; }
 
-section { min-height: 100vh; padding: 10rem 0; position: relative; display: flex; align-items: center; }
+section { min-height: 100vh; padding: 12rem 0; position: relative; }
 
-/* Hero Section */
-#hero { justify-content: center; text-align: center; }
-
-.hero-glow {
-    position: absolute;
-    width: 60vw;
-    height: 60vh;
-    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
-    filter: blur(100px);
-    z-index: -1;
-    animation: pulse-glow 10s infinite alternate;
+/* Cinematic Typography */
+.red-glow-text {
+    background: linear-gradient(135deg, #fff 0%, var(--red-bright) 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255, 49, 49, 0.5));
+    font-weight: 900;
 }
 
-@keyframes pulse-glow {
-    from { transform: scale(1); opacity: 0.3; }
-    to { transform: scale(1.2); opacity: 0.6; }
+h1 { font-size: clamp(4rem, 15vw, 12rem); line-height: 0.8; letter-spacing: -6px; }
+h2 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -2px; margin-bottom: 4rem; }
+
+/* Floating Navigation */
+nav {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 3rem;
+    border-radius: 100px;
+    z-index: 1000;
+}
+
+.nav-links { display: flex; gap: 4rem; }
+.nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--red-bright); text-shadow: 0 0 15px var(--red-bright); }
+
+/* Hero Section */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--primary);
+    font-size: 1.3rem;
+    color: var(--red-bright);
     text-transform: uppercase;
     letter-spacing: 20px;
     margin-bottom: 2rem;
     font-weight: 300;
 }
 
-.gradient-text {
-    background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, #fff 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 10s linear infinite;
-    font-weight: 900;
-}
-
-h1 { font-size: clamp(4rem, 15vw, 12rem); line-height: 0.8; letter-spacing: -5px; }
-
-/* Robust Bento Grid (2x2 Layout) */
+/* RED VELVET BENTO GRID */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    width: 100%;
+    gap: 3.5rem;
+    margin-top: 6rem;
 }
 
 .project-card {
     position: relative;
-    height: 500px;
+    height: 550px;
     border-radius: 40px;
     overflow: hidden;
-    background: #000;
+    background: #0a0000;
     border: 1px solid var(--glass-border);
     transition: var(--transition);
 }
-
-.project-card.large { grid-column: span 1; } /* Reset to span 1 for robustness */
 
 .project-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    z-index: 0;
-    filter: brightness(0.2) saturate(0.5);
+    filter: brightness(0.3) saturate(0.2);
     transition: var(--transition);
 }
 
 .project-card:hover .project-bg {
-    filter: brightness(0.8) saturate(1);
+    filter: brightness(0.9) saturate(1.2);
     transform: scale(1.05);
 }
 
-.project-card::after {
-    content: '';
+.project-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(139,0,0,0.3) 100%);
     z-index: 1;
 }
 
@@ -156,99 +173,83 @@ h1 { font-size: clamp(4rem, 15vw, 12rem); line-height: 0.8; letter-spacing: -5px
 }
 
 .project-info h3 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 1rem;
     color: #fff;
 }
 
-.project-tags {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
+.project-card:hover h3 { color: var(--red-bright); }
 
+.project-tags { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; }
 .project-tags span {
     font-size: 0.7rem;
     font-weight: 800;
-    padding: 0.4rem 1.2rem;
-    background: rgba(212, 175, 55, 0.1);
+    padding: 0.5rem 1.4rem;
+    background: rgba(255, 49, 49, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
-    color: var(--primary);
+    color: var(--red-bright);
     text-transform: uppercase;
 }
 
 .project-btn {
     align-self: flex-start;
-    padding: 1rem 3rem;
-    background: var(--primary);
-    color: #000;
+    padding: 1.2rem 3rem;
+    background: var(--red-bright);
+    color: #fff;
     text-decoration: none;
     font-weight: 900;
-    border-radius: 15px;
+    border-radius: 18px;
     font-size: 0.9rem;
     transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(255, 49, 49, 0.2);
 }
 
-.project-btn:hover { background: #fff; transform: translateY(-5px); box-shadow: 0 0 40px rgba(212,175,55,0.2); }
+.project-btn:hover { background: #fff; color: #000; transform: translateY(-5px); }
 
-/* Identity Section */
+/* Identity (About) Card */
 .identity-card {
-    background: var(--bg-card);
+    background: var(--glass);
     backdrop-filter: blur(40px);
     border: 1px solid var(--glass-border);
-    border-radius: 50px;
-    padding: 6rem;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
-    width: 100%;
-}
-
-.stat-item h4 { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem; }
-.stat-item p { color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
-
-/* Contact Section */
-.bridge-card {
-    background: #050505;
-    border: 1px solid var(--glass-border);
+    border-radius: 60px;
     padding: 8rem;
-    border-radius: 50px;
-    text-align: center;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
 }
 
-/* Floating Navigation */
-nav {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(30px);
+.stat-box { display: flex; flex-direction: column; gap: 3rem; }
+.stat-item h4 { font-size: 3rem; color: var(--red-bright); margin-bottom: 0.5rem; }
+.stat-item p { color: var(--text-dim); text-transform: uppercase; letter-spacing: 3px; }
+
+/* Bridge (Contact) */
+.bridge-card {
+    background: radial-gradient(circle at center, #2a0000 0%, #000 100%);
     border: 1px solid var(--glass-border);
-    padding: 0.8rem 2.5rem;
-    border-radius: 100px;
-    z-index: 1000;
+    padding: 10rem;
+    border-radius: 60px;
+    text-align: center;
 }
 
-.nav-links { display: flex; gap: 3rem; }
-.nav-links a {
-    color: var(--text-dim);
+.bridge-btn {
+    display: inline-block;
+    margin-top: 4rem;
+    padding: 2rem 6rem;
+    background: var(--red-bright);
+    color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 3px;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 100px;
     transition: var(--transition);
 }
 
-.nav-links a:hover, .nav-links a.active { color: var(--primary); }
-
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 1024px) {
     .project-grid { grid-template-columns: 1fr; }
-    .identity-card { grid-template-columns: 1fr; }
+    .identity-card { grid-template-columns: 1fr; padding: 4rem; }
     .container { padding: 0 2rem; }
 }
