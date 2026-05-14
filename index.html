@@ -13,14 +13,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Icons -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <!-- Three.js (For Cinematic Background) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.157.0/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="noise-overlay"></div>
     <div class="cursor"></div>
+    <canvas id="bg-canvas"></canvas>
 
     <nav>
         <div class="nav-links">
-            <a href="#hero">Origin</a>
+            <a href="#hero" class="active">Origin</a>
             <a href="#about">Identity</a>
             <a href="#projects">Work</a>
             <a href="#contact">Bridge</a>
@@ -30,31 +34,34 @@
     <main>
         <!-- Origin (Hero) -->
         <section id="hero">
+            <div class="hero-glow"></div>
             <p class="hero-subtitle">Architect of Digital Solutions</p>
             <h1 class="gradient-text">SAILESH</h1>
-            <p class="hero-description">Engineering premium digital ecosystems with precision, passion, and state-of-the-art technology.</p>
+            <p class="hero-description">Engineering premium digital ecosystems with precision, passion, and state-of-the-art technology. Specializing in high-performance architectures and cinematic user experiences.</p>
         </section>
 
         <!-- Identity (About) -->
         <section id="about">
             <div class="container">
-                <div class="bridge-card" style="text-align: left; padding: 6rem;">
-                    <h2 class="gradient-text">IDENTITY</h2>
-                    <p style="font-size: 1.5rem; max-width: 800px; color: var(--text-main); margin-bottom: 3rem;">
-                        I am a Full-Stack Engineer dedicated to crafting high-performance, visually stunning applications. My focus is on blending technical mastery with cinematic user experience.
-                    </p>
-                    <div style="display: flex; gap: 4rem;">
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 2rem;">B.Tech CSE</h4>
-                            <p style="color: var(--text-dim); letter-spacing: 2px;">Silicon Institute</p>
+                <div class="identity-card">
+                    <div class="identity-text">
+                        <h2 class="gradient-text">IDENTITY</h2>
+                        <p style="font-size: 1.8rem; line-height: 1.8; color: var(--text-main); margin-bottom: 4rem;">
+                            Full-Stack Engineer & B.Tech CSE student dedicated to blending technical mastery with artistic precision. I transform complex ideas into flawless digital realities.
+                        </p>
+                    </div>
+                    <div class="identity-stats" style="display: flex; flex-direction: column; gap: 4rem;">
+                        <div class="stat-item">
+                            <h4>4+ PROJECTS</h4>
+                            <p>Completed with excellence</p>
                         </div>
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 2rem;">MERN STACK</h4>
-                            <p style="color: var(--text-dim); letter-spacing: 2px;">Expert Architecture</p>
+                        <div class="stat-item">
+                            <h4>MERN STACK</h4>
+                            <p>Expert Architecture</p>
                         </div>
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 2rem;">SAP CERTIFIED</h4>
-                            <p style="color: var(--text-dim); letter-spacing: 2px;">Back-end Associate</p>
+                        <div class="stat-item">
+                            <h4>SAP CERTIFIED</h4>
+                            <p>Back-end associate</p>
                         </div>
                     </div>
                 </div>
@@ -64,58 +71,53 @@
         <!-- Work (Projects) -->
         <section id="projects">
             <div class="container">
-                <h2 class="gradient-text">FEATURED WORK</h2>
+                <h2 class="gradient-text" style="margin-bottom: 6rem; text-align: center;">FEATURED WORK</h2>
                 <div class="project-grid">
-                    <!-- MedLink AI (LARGE) -->
+                    <!-- MedLink AI (Large) -->
                     <div class="project-card large">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200')"></div>
-                        <div class="project-core"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>MERN</span>
                                 <span>AI</span>
                                 <span>WebRTC</span>
                             </div>
-                            <h3>MedLink AI</h3>
-                            <p>Premium Healthcare Intelligence Ecosystem</p>
-                            <a href="https://github.com/Sailesh173" class="project-btn">VIEW ARCHITECTURE</a>
+                            <h3>MedLink AI — Healthcare Dashboard</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">EXPLORE ARCHITECTURE</a>
                         </div>
                     </div>
-                    <!-- Smart Traffic (SMALL) -->
+                    <!-- Smart Traffic (Small) -->
                     <div class="project-card small">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1545147980-c9d2c6c745b6?auto=format&fit=crop&q=80&w=800')"></div>
-                        <div class="project-core"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>Python</span>
                                 <span>YOLO</span>
                             </div>
-                            <h3>Smart Traffic</h3>
-                            <a href="https://github.com/Sailesh173" class="project-btn">CODE</a>
+                            <h3>City Intelligence</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">SOURCE</a>
                         </div>
                     </div>
-                    <!-- HealthTrack (SMALL) -->
+                    <!-- HealthTrack (Small) -->
                     <div class="project-card small">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=800')"></div>
-                        <div class="project-core"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>Next.js</span>
                             </div>
-                            <h3>HealthTrack</h3>
+                            <h3>HealthTrack AI</h3>
                             <a href="https://github.com/Sailesh173" class="project-btn">VIEW</a>
                         </div>
                     </div>
-                    <!-- Artisan Market (TALL) -->
+                    <!-- Artisan Market (Tall) -->
                     <div class="project-card tall">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800')"></div>
-                        <div class="project-core"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>React</span>
                                 <span>Redis</span>
                             </div>
-                            <h3>Artisan Market</h3>
+                            <h3>Artisan Marketplace</h3>
                             <a href="#" class="project-btn">VISIT PLATFORM</a>
                         </div>
                     </div>
@@ -127,8 +129,8 @@
         <section id="contact">
             <div class="container">
                 <div class="bridge-card">
-                    <h1 class="gradient-text">BRIDGE</h1>
-                    <p style="font-size: 1.5rem; color: var(--text-dim); margin-top: 2rem;">Ready to initiate a collaboration of digital excellence?</p>
+                    <h1 class="gradient-text" style="font-size: 8rem;">BRIDGE</h1>
+                    <p style="font-size: 1.8rem; color: var(--text-dim); margin-top: 2rem;">Ready to initiate a collaboration of digital excellence?</p>
                     <a href="mailto:sm1542861@gmail.com" class="bridge-btn">INITIATE CONNECTION</a>
                 </div>
             </div>
