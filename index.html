@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Icons -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-    <!-- Three.js (For Cinematic Background) -->
+    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.157.0/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,25 +32,27 @@
     </nav>
 
     <main>
-        <!-- Origin (Hero) -->
+        <!-- Hero Section -->
         <section id="hero">
             <div class="hero-glow"></div>
-            <p class="hero-subtitle">Architect of Digital Solutions</p>
-            <h1 class="gradient-text">SAILESH</h1>
-            <p class="hero-description">Engineering premium digital ecosystems with precision, passion, and state-of-the-art technology. Specializing in high-performance architectures and cinematic user experiences.</p>
+            <div class="container">
+                <p class="hero-subtitle">Architect of Digital Solutions</p>
+                <h1 class="gradient-text">SAILESH</h1>
+                <p class="hero-description">Engineering premium digital ecosystems with precision, passion, and state-of-the-art technology.</p>
+            </div>
         </section>
 
-        <!-- Identity (About) -->
+        <!-- Identity Section -->
         <section id="about">
             <div class="container">
                 <div class="identity-card">
                     <div class="identity-text">
-                        <h2 class="gradient-text">IDENTITY</h2>
-                        <p style="font-size: 1.8rem; line-height: 1.8; color: var(--text-main); margin-bottom: 4rem;">
-                            Full-Stack Engineer & B.Tech CSE student dedicated to blending technical mastery with artistic precision. I transform complex ideas into flawless digital realities.
+                        <h2 class="gradient-text" style="font-size: 4rem; margin-bottom: 2rem;">IDENTITY</h2>
+                        <p style="font-size: 1.5rem; line-height: 1.8; color: var(--text-main); margin-bottom: 2rem;">
+                            Full-Stack Engineer & B.Tech CSE student dedicated to blending technical mastery with artistic precision.
                         </p>
                     </div>
-                    <div class="identity-stats" style="display: flex; flex-direction: column; gap: 4rem;">
+                    <div class="identity-stats" style="display: flex; flex-direction: column; gap: 3rem;">
                         <div class="stat-item">
                             <h4>4+ PROJECTS</h4>
                             <p>Completed with excellence</p>
@@ -68,70 +70,69 @@
             </div>
         </section>
 
-        <!-- Work (Projects) -->
+        <!-- Work Section -->
         <section id="projects">
             <div class="container">
-                <h2 class="gradient-text" style="margin-bottom: 6rem; text-align: center;">FEATURED WORK</h2>
+                <h2 class="gradient-text" style="font-size: 5rem; margin-bottom: 6rem; text-align: center;">FEATURED WORK</h2>
                 <div class="project-grid">
-                    <!-- MedLink AI (Large) -->
-                    <div class="project-card large">
+                    <!-- Project 1 -->
+                    <div class="project-card">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200')"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>MERN</span>
                                 <span>AI</span>
-                                <span>WebRTC</span>
                             </div>
-                            <h3>MedLink AI — Healthcare Dashboard</h3>
-                            <a href="https://github.com/Sailesh173" class="project-btn">EXPLORE ARCHITECTURE</a>
+                            <h3>MedLink AI</h3>
+                            <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">EXPLORE</a>
                         </div>
                     </div>
-                    <!-- Smart Traffic (Small) -->
-                    <div class="project-card small">
+                    <!-- Project 2 -->
+                    <div class="project-card">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1545147980-c9d2c6c745b6?auto=format&fit=crop&q=80&w=800')"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>Python</span>
-                                <span>YOLO</span>
+                                <span>Vision</span>
                             </div>
-                            <h3>City Intelligence</h3>
-                            <a href="https://github.com/Sailesh173" class="project-btn">SOURCE</a>
+                            <h3>Smart Traffic</h3>
+                            <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">CODE</a>
                         </div>
                     </div>
-                    <!-- HealthTrack (Small) -->
-                    <div class="project-card small">
+                    <!-- Project 3 -->
+                    <div class="project-card">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=800')"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>Next.js</span>
                             </div>
-                            <h3>HealthTrack AI</h3>
-                            <a href="https://github.com/Sailesh173" class="project-btn">VIEW</a>
+                            <h3>HealthTrack</h3>
+                            <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">VIEW</a>
                         </div>
                     </div>
-                    <!-- Artisan Market (Tall) -->
-                    <div class="project-card tall">
+                    <!-- Project 4 -->
+                    <div class="project-card">
                         <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800')"></div>
                         <div class="project-content">
                             <div class="project-tags">
                                 <span>React</span>
                                 <span>Redis</span>
                             </div>
-                            <h3>Artisan Marketplace</h3>
-                            <a href="#" class="project-btn">VISIT PLATFORM</a>
+                            <h3>Artisan Market</h3>
+                            <a href="#" class="project-btn">VISIT</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bridge (Contact) -->
+        <!-- Contact Section -->
         <section id="contact">
             <div class="container">
                 <div class="bridge-card">
-                    <h1 class="gradient-text" style="font-size: 8rem;">BRIDGE</h1>
-                    <p style="font-size: 1.8rem; color: var(--text-dim); margin-top: 2rem;">Ready to initiate a collaboration of digital excellence?</p>
-                    <a href="mailto:sm1542861@gmail.com" class="bridge-btn">INITIATE CONNECTION</a>
+                    <h2 class="gradient-text" style="font-size: 6rem; margin-bottom: 2rem;">BRIDGE</h2>
+                    <p style="font-size: 1.5rem; color: var(--text-dim);">Ready to initiate a collaboration of digital excellence?</p>
+                    <a href="mailto:sm1542861@gmail.com" class="project-btn" style="margin-top: 4rem; padding: 1.5rem 5rem; border-radius: 100px; font-size: 1.2rem;">INITIATE CONNECTION</a>
                 </div>
             </div>
         </section>
