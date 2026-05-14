@@ -295,73 +295,122 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="container">
-                <h2 class="section-title gradient-text scramble-text">Featured Projects</h2>
+                <h2 class="section-title gradient-text scramble-text">Featured Work</h2>
+                <p class="section-subtitle">A collection of architectural digital solutions built with precision and modern stacks.</p>
+                
                 <div class="project-grid">
-                    <!-- MedLink AI -->
-                    <div class="project-card glass-card" data-project="medlink">
-                        <div class="project-img" style="background: linear-gradient(135deg, #0f766e, #134e4a);"></div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>Socket.io</span>
+                    <!-- MedLink AI (LARGE) -->
+                    <div class="project-card large">
+                        <div class="project-mesh mesh-1"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <div class="project-icon-box"><i data-lucide="activity"></i></div>
+                                <div class="project-status live">
+                                    <span class="status-dot"></span> LIVE SYSTEM
+                                </div>
                             </div>
-                            <h3>MedLink AI — Healthcare Platform</h3>
-                            <p>AI-powered healthcare platform with symptom checking via Groq LLM, real-time doctor consultations via WebRTC, medication tracking, and emergency services.</p>
-                            <div class="impact">
-                                <strong>Impact:</strong> Full-stack MERN app with real-time video consultations and AI diagnostic assistance.
+                            <div class="project-info">
+                                <h3>MedLink AI</h3>
+                                <p>Next-generation healthcare ecosystem. Integrated Groq LLM for diagnostic intelligence and WebRTC for zero-latency video consultations.</p>
+                                <div class="project-tags">
+                                    <span>MERN Stack</span>
+                                    <span>WebRTC</span>
+                                    <span>Socket.io</span>
+                                    <span>Groq AI</span>
+                                    <span>JWT Auth</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Smart Traffic -->
-                    <div class="project-card glass-card" data-project="traffic">
-                        <div class="project-img" style="background: linear-gradient(135deg, #1e1b4b, #312e81);"></div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>YOLO</span>
-                                <span>TensorFlow.js</span>
-                                <span>Docker</span>
-                                <span>AWS</span>
-                            </div>
-                            <h3>Smart Traffic Management System</h3>
-                            <p>Real-time vehicle counting and classification from live CCTV feeds to prioritize emergency vehicles. ML-powered signal timing optimization.</p>
-                            <div class="impact">
-                                <strong>Impact:</strong> Centralized cloud dashboard visualizing live traffic density across multiple intersections.
+                            <div class="project-footer">
+                                <a href="https://github.com/Sailesh173" target="_blank" class="project-btn primary">
+                                    <i data-lucide="github"></i> Repository
+                                </a>
+                                <a href="#" class="project-btn">
+                                    <i data-lucide="external-link"></i> Live Demo
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <!-- HealthTrack -->
-                    <div class="project-card glass-card" data-project="healthtrack">
-                        <div class="project-img" style="background: linear-gradient(135deg, #7c2d12, #9a3412);"></div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>Next.js</span>
-                                <span>FastAPI</span>
-                                <span>PostgreSQL</span>
-                                <span>OpenAI</span>
+
+                    <!-- Smart Traffic (WIDE) -->
+                    <div class="project-card wide">
+                        <div class="project-mesh mesh-2"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <div class="project-icon-box"><i data-lucide="navigation"></i></div>
+                                <div class="project-status">
+                                    <span class="status-dot" style="background:#fbbf24; box-shadow:0 0 10px #fbbf24;"></span> PROTOTYPE
+                                </div>
                             </div>
-                            <h3>HealthTrack — Fitness & Nutrition AI</h3>
-                            <p>AI-powered fitness dashboard with calorie prediction using TensorFlow.js, meal planning via OpenAI API, and comprehensive analytics with Chart.js.</p>
-                            <div class="impact">
-                                <strong>Impact:</strong> End-to-end health tracking with ML-driven personalized recommendations.
+                            <div class="project-info">
+                                <h3>Smart Traffic Management</h3>
+                                <p>YOLO-driven vehicle detection system designed for emergency vehicle prioritization and signal optimization.</p>
+                                <div class="project-tags">
+                                    <span>YOLO v8</span>
+                                    <span>Python</span>
+                                    <span>Docker</span>
+                                    <span>AWS ECS</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">
+                                    <i data-lucide="github"></i> Code
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <!-- E-Commerce -->
-                    <div class="project-card glass-card" data-project="ecommerce">
-                        <div class="project-img" style="background: linear-gradient(135deg, #0f172a, #334155);"></div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Redux</span>
-                                <span>Express</span>
-                                <span>Redis</span>
+
+                    <!-- HealthTrack (TALL) -->
+                    <div class="project-card tall">
+                        <div class="project-mesh mesh-3"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <div class="project-icon-box"><i data-lucide="heart"></i></div>
                             </div>
-                            <h3>E-Commerce for Local Artisans</h3>
-                            <p>Full-stack marketplace empowering local artisans with role-based access control, Redis-cached product queries, and responsive Tailwind UI.</p>
-                            <div class="impact">
-                                <strong>Impact:</strong> JWT-secured platform with admin/user roles and optimized MongoDB queries via Redis caching.
+                            <div class="project-info">
+                                <h3>HealthTrack AI</h3>
+                                <p>Personalized nutrition and fitness intelligence. Predicting calorie burn and generating meal plans via OpenAI.</p>
+                                <div class="project-tags">
+                                    <span>Next.js</span>
+                                    <span>FastAPI</span>
+                                    <span>TensorFlow.js</span>
+                                    <span>OpenAI</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">
+                                    <i data-lucide="github"></i> View
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-Commerce (WIDE) -->
+                    <div class="project-card wide">
+                        <div class="project-mesh mesh-4"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <div class="project-icon-box"><i data-lucide="shopping-bag"></i></div>
+                                <div class="project-status live">
+                                    <span class="status-dot"></span> LIVE
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Artisan Marketplace</h3>
+                                <p>Role-based e-commerce platform optimized with Redis caching and secure JWT authentication.</p>
+                                <div class="project-tags">
+                                    <span>React</span>
+                                    <span>Redux</span>
+                                    <span>Redis</span>
+                                    <span>MongoDB</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/Sailesh173" target="_blank" class="project-btn">
+                                    <i data-lucide="github"></i> Code
+                                </a>
+                                <a href="#" class="project-btn">
+                                    <i data-lucide="external-link"></i> Visit
+                                </a>
                             </div>
                         </div>
                     </div>

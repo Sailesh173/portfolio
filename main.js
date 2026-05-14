@@ -39,17 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Magnetic attraction effect (with jitter prevention)
+            // Magnetic attraction effect
             if (el.classList.contains('btn') || el.classList.contains('mini-card') || el.classList.contains('social-link')) {
                 el.addEventListener('mousemove', (e) => {
                     const rect = el.getBoundingClientRect();
-                    // Get current GSAP transform values so we don't calculate offset based on shifted position
                     const currentX = gsap.getProperty(el, "x") || 0;
                     const currentY = gsap.getProperty(el, "y") || 0;
-                    
                     const centerX = rect.left - currentX + rect.width / 2;
                     const centerY = rect.top - currentY + rect.height / 2;
-                    
                     const x = e.clientX - centerX;
                     const y = e.clientY - centerY;
                     
@@ -61,6 +58,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             }
+        });
+
+        // --- 3D Tilt Effect for Project Cards ---
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+                
+                // Reset terminal lines so they re-animate next time
+                const lines = card.querySelectorAll('.terminal-line');
+                lines.forEach(line => {
+                    line.style.animation = 'none';
+                    void line.offsetWidth; 
+                    line.style.animation = null;
+                });
+            });
         });
     } else {
         // Hide cursor on touch devices
@@ -362,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Fade up elements
-    const fadeUpElements = gsap.utils.toArray('.about-text, .mini-card, .skill-category, .project-card, .contact-info, .contact-form, .stat-box');
+    const fadeUpElements = gsap.utils.toArray('.about-text, .mini-card, .skill-category, .project-card, .contact-info, .contact-form, .stat-box, .section-subtitle');
     fadeUpElements.forEach(el => {
         gsap.fromTo(el, 
             { opacity: 0, y: 50 },
