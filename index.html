@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sailesh Kumar | Full-Stack Architect</title>
+    <title>Sailesh Kumar | Digital Architect</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Icons -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
     <div class="cursor"></div>
 
-    <!-- Navigation Dashboard -->
     <nav>
         <div class="nav-links">
             <a href="#hero">Origin</a>
@@ -25,145 +27,108 @@
         </div>
     </nav>
 
-    <!-- Origin (Hero) -->
-    <section id="hero">
-        <div class="hero-content">
+    <main>
+        <!-- Origin (Hero) -->
+        <section id="hero">
             <p class="hero-subtitle">Architect of Digital Solutions</p>
             <h1 class="gradient-text">SAILESH</h1>
             <p class="hero-description">Engineering premium digital ecosystems with precision, passion, and state-of-the-art technology.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Identity (About) -->
-    <section id="about">
-        <div class="container">
-            <div class="glass-card">
-                <h2 class="gradient-text">IDENTITY</h2>
-                <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;">
-                    <div>
-                        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dim);">
-                            I am a Full-Stack Engineer and B.Tech CSE student at Silicon Institute of Technology. I specialize in the MERN stack and AI/ML integration, transforming complex challenges into elegant, high-performance digital experiences.
-                        </p>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h4 style="color: var(--primary); font-size: 1.5rem;">4+ PROJECTS</h4>
-                            <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px;">Completed with excellence</p>
+        <!-- Identity (About) -->
+        <section id="about">
+            <div class="container">
+                <div class="bridge-card" style="text-align: left; padding: 6rem;">
+                    <h2 class="gradient-text">IDENTITY</h2>
+                    <p style="font-size: 1.5rem; max-width: 800px; color: var(--text-main); margin-bottom: 3rem;">
+                        I am a Full-Stack Engineer dedicated to crafting high-performance, visually stunning applications. My focus is on blending technical mastery with cinematic user experience.
+                    </p>
+                    <div style="display: flex; gap: 4rem;">
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 2rem;">B.Tech CSE</h4>
+                            <p style="color: var(--text-dim); letter-spacing: 2px;">Silicon Institute</p>
                         </div>
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h4 style="color: var(--primary); font-size: 1.5rem;">SAP CERTIFIED</h4>
-                            <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px;">Back-end associate</p>
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 2rem;">MERN STACK</h4>
+                            <p style="color: var(--text-dim); letter-spacing: 2px;">Expert Architecture</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 2rem;">SAP CERTIFIED</h4>
+                            <p style="color: var(--text-dim); letter-spacing: 2px;">Back-end Associate</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Work (Projects) -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="gradient-text" style="font-size: 4rem; text-align: center;">FEATURED WORK</h2>
-            <div class="project-grid">
-                <!-- MedLink AI (LARGE) -->
-                <div class="project-card large">
-                    <div class="project-bg" style="background-image: url('assets/projects/medlink.png')"></div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon-box"><i data-lucide="activity"></i></div>
-                        </div>
-                        <div class="project-info">
-                            <h3>MedLink AI</h3>
-                            <p>Next-gen healthcare ecosystem. Groq LLM intelligence + WebRTC consultations.</p>
+        <!-- Work (Projects) -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="gradient-text">FEATURED WORK</h2>
+                <div class="project-grid">
+                    <!-- Project 1 (Large) -->
+                    <div class="project-card large">
+                        <div class="project-bg" style="background-image: url('assets/projects/medlink.png')"></div>
+                        <div class="project-content">
                             <div class="project-tags">
                                 <span>MERN</span>
                                 <span>AI</span>
                                 <span>WebRTC</span>
                             </div>
-                        </div>
-                        <div class="project-footer">
-                            <a href="https://github.com/Sailesh173" class="project-btn primary">CODE</a>
+                            <h3>MedLink AI</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">VIEW ARCHITECTURE</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Smart Traffic (WIDE) -->
-                <div class="project-card wide">
-                    <div class="project-bg" style="background-image: url('assets/projects/traffic.png')"></div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon-box"><i data-lucide="navigation"></i></div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Smart Traffic</h3>
-                            <p>ML-driven signal optimization via YOLO vision data.</p>
+                    <!-- Project 2 (Small) -->
+                    <div class="project-card small">
+                        <div class="project-bg" style="background-image: url('assets/projects/traffic.png')"></div>
+                        <div class="project-content">
                             <div class="project-tags">
                                 <span>Python</span>
                                 <span>YOLO</span>
-                                <span>Vision</span>
                             </div>
-                        </div>
-                        <div class="project-footer">
-                            <a href="https://github.com/Sailesh173" class="project-btn">SOURCE</a>
+                            <h3>Smart Traffic</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">CODE</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- HealthTrack (TALL) -->
-                <div class="project-card tall">
-                    <div class="project-bg" style="background-image: url('assets/projects/healthtrack.png')"></div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon-box"><i data-lucide="heart"></i></div>
-                        </div>
-                        <div class="project-info">
-                            <h3>HealthTrack</h3>
-                            <p>AI Fitness intelligence.</p>
+                    <!-- Project 3 (Small) -->
+                    <div class="project-card small">
+                        <div class="project-bg" style="background-image: url('assets/projects/healthtrack.png')"></div>
+                        <div class="project-content">
                             <div class="project-tags">
                                 <span>Next.js</span>
-                                <span>OpenAI</span>
                             </div>
-                        </div>
-                        <div class="project-footer">
+                            <h3>HealthTrack</h3>
                             <a href="https://github.com/Sailesh173" class="project-btn">VIEW</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- E-Commerce (WIDE) -->
-                <div class="project-card wide">
-                    <div class="project-bg" style="background-image: url('assets/projects/ecommerce.png')"></div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon-box"><i data-lucide="shopping-bag"></i></div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Artisan Market</h3>
-                            <p>Role-based marketplace.</p>
+                    <!-- Project 4 (Tall) -->
+                    <div class="project-card tall">
+                        <div class="project-bg" style="background-image: url('assets/projects/ecommerce.png')"></div>
+                        <div class="project-content">
                             <div class="project-tags">
                                 <span>React</span>
                                 <span>Redis</span>
                             </div>
-                        </div>
-                        <div class="project-footer">
-                            <a href="#" class="project-btn">VISIT</a>
+                            <h3>Artisan Market</h3>
+                            <a href="#" class="project-btn">VISIT PLATFORM</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Bridge (Contact) -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-card">
-                <h2 class="gradient-text" style="font-size: 5rem;">BRIDGE</h2>
-                <p style="font-size: 1.2rem; color: var(--text-dim);">Ready to initiate a collaboration of digital excellence?</p>
-                <a href="mailto:sm1542861@gmail.com" class="main-contact-btn">INITIATE CONNECTION</a>
+        <!-- Bridge (Contact) -->
+        <section id="contact">
+            <div class="container">
+                <div class="bridge-card">
+                    <h1 class="gradient-text">BRIDGE</h1>
+                    <p style="font-size: 1.5rem; color: var(--text-dim); margin-top: 2rem;">Ready to initiate a collaboration of digital excellence?</p>
+                    <a href="mailto:sm1542861@gmail.com" class="bridge-btn">INITIATE CONNECTION</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="main.js"></script>
 </body>
