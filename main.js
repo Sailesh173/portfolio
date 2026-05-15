@@ -1,11 +1,11 @@
-/*
-    Sailesh Kumar Mishra - Interaction Layer v10.1
-    3D Background + Clean Interactions
+/* 
+    Sailesh Kumar Mishra - ADVANCED 3D ENGINE v10.2
+    Cinematic Vortex + 3D Core
 */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ---- 3D PARTICLE BACKGROUND (Safe) ----
+    // ---- ADVANCED 3D VORTEX ENGINE ----
     try {
         const canvas = document.getElementById('bg3d');
         if (canvas && window.THREE) {
@@ -15,137 +15,131 @@ document.addEventListener('DOMContentLoaded', () => {
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            // Create floating particles
-            const particleCount = 600;
+            // --- 3000 PARTICLE VORTEX ---
+            const particleCount = 3000;
             const geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const colors = new Float32Array(particleCount * 3);
+            const pos = new Float32Array(particleCount * 3);
+            const col = new Float32Array(particleCount * 3);
 
             for (let i = 0; i < particleCount; i++) {
-                positions[i * 3]     = (Math.random() - 0.5) * 40;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 40;
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
+                // Sphere distribution with vortex twist
+                const radius = Math.random() * 25 + 5;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
 
-                // Mix of indigo, purple, and pink
-                const colorChoice = Math.random();
-                if (colorChoice < 0.33) {
-                    colors[i * 3] = 0.39; colors[i * 3 + 1] = 0.40; colors[i * 3 + 2] = 0.95; // Indigo
-                } else if (colorChoice < 0.66) {
-                    colors[i * 3] = 0.66; colors[i * 3 + 1] = 0.33; colors[i * 3 + 2] = 0.97; // Purple
-                } else {
-                    colors[i * 3] = 0.93; colors[i * 3 + 1] = 0.28; colors[i * 3 + 2] = 0.60; // Pink
-                }
+                pos[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+                pos[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                pos[i * 3 + 2] = radius * Math.cos(phi);
+
+                // Deep Indigo to Electric Purple
+                col[i * 3] = 0.38 + Math.random() * 0.2; // R
+                col[i * 3 + 1] = 0.40 + Math.random() * 0.1; // G
+                col[i * 3 + 2] = 0.95; // B
             }
 
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            geometry.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(col, 3));
 
             const material = new THREE.PointsMaterial({
                 size: 0.08,
                 vertexColors: true,
                 transparent: true,
-                opacity: 0.6,
+                opacity: 0.4,
                 blending: THREE.AdditiveBlending
             });
 
-            const particles = new THREE.Points(geometry, material);
-            scene.add(particles);
+            const starfield = new THREE.Points(geometry, material);
+            scene.add(starfield);
 
-            // Add soft glowing orbs
-            const orbGeometry = new THREE.SphereGeometry(0.5, 16, 16);
-            const orbMaterial = new THREE.MeshBasicMaterial({ 
+            // --- 3D WIREFRAME CORE (The "Architect" Object) ---
+            const coreGeom = new THREE.TorusKnotGeometry(4, 1.2, 120, 16);
+            const coreMat = new THREE.MeshBasicMaterial({ 
                 color: 0x6366f1, 
+                wireframe: true, 
                 transparent: true, 
-                opacity: 0.08 
+                opacity: 0.1 
             });
+            const core = new THREE.Mesh(coreGeom, coreMat);
+            scene.add(core);
 
-            for (let i = 0; i < 5; i++) {
-                const orb = new THREE.Mesh(orbGeometry, orbMaterial.clone());
-                orb.position.set(
-                    (Math.random() - 0.5) * 20,
-                    (Math.random() - 0.5) * 20,
-                    (Math.random() - 0.5) * 10
-                );
-                orb.scale.setScalar(Math.random() * 3 + 1);
-                scene.add(orb);
-            }
+            camera.position.z = 18;
 
-            camera.position.z = 15;
-
-            // Mouse interaction
+            // Mouse Interaction Logic
             let mouseX = 0, mouseY = 0;
+            let targetX = 0, targetY = 0;
             document.addEventListener('mousemove', (e) => {
-                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+                mouseX = (e.clientX - window.innerWidth / 2);
+                mouseY = (e.clientY - window.innerHeight / 2);
             });
 
-            // Animation loop
+            // --- ANIMATION ENGINE ---
             function animate() {
                 requestAnimationFrame(animate);
-                particles.rotation.y += 0.0008;
-                particles.rotation.x += 0.0003;
+                
+                const time = Date.now() * 0.0005;
 
-                // Subtle camera follow
-                camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
-                camera.position.y += (-mouseY * 2 - camera.position.y) * 0.02;
+                // Rotate Vortex
+                starfield.rotation.y += 0.001;
+                starfield.rotation.z += 0.0005;
+
+                // Rotate Core
+                core.rotation.x = time * 0.2;
+                core.rotation.y = time * 0.3;
+
+                // Cinematic Smooth Follow
+                targetX = mouseX * 0.01;
+                targetY = mouseY * 0.01;
+
+                camera.position.x += (targetX - camera.position.x) * 0.05;
+                camera.position.y += (-targetY - camera.position.y) * 0.05;
                 camera.lookAt(scene.position);
 
                 renderer.render(scene, camera);
             }
             animate();
 
-            // Handle resize
+            // Handle Resize
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
         }
-    } catch (e) {
-        // 3D failed — page still works fine without it
-        console.log('3D background skipped:', e.message);
+    } catch (err) {
+        console.warn("3D Engine Fail-Safe Triggered:", err);
     }
 
-    // ---- SMOOTH SCROLL ----
+    // --- STANDARD INTERACTIONS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             e.preventDefault();
             const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // ---- 3D TILT ON PROJECT CARDS ----
     document.querySelectorAll('.project-item').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
-            const y = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
-            card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${y}deg) translateY(-6px)`;
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
+            card.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${y}deg) translateY(-8px)`;
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
+        card.addEventListener('mouseleave', () => card.style.transform = '');
     });
 
-    // ---- ACTIVE NAV HIGHLIGHT ----
-    const sections = document.querySelectorAll('section[id]');
+    // Nav Highlight Logic
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY + 200;
+        let current = "";
         sections.forEach(section => {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
-            const link = document.querySelector(`nav a[href="#${id}"]`);
-            if (link) {
-                if (scrollY >= top && scrollY < top + height) {
-                    link.style.color = '#6366f1';
-                } else {
-                    link.style.color = '';
-                }
+            if (window.pageYOffset >= (section.offsetTop - 150)) {
+                current = section.getAttribute('id');
             }
+        });
+        navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === `#${current}` ? '#6366f1' : '';
         });
     });
 });
