@@ -432,31 +432,54 @@ nav a:hover { color: var(--text); }
     letter-spacing: 2px;
 }
 
-/* ---- CONTACT / FOOTER ---- */
+/* ---- CONTACT ---- */
 .contact-section {
     text-align: center;
 }
 
 .contact-section .section-desc { margin: 0 auto 60px; }
 
-.contact-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 80px;
-    max-width: 700px;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.contact-card h3 {
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 12px;
+.contact-method {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 28px;
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
+    transition: all 0.4s;
+    display: block;
 }
 
-.contact-card p {
+.contact-method:hover {
+    border-color: var(--accent);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.contact-method h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.contact-method p {
     color: var(--text-2);
-    margin-bottom: 32px;
+    font-size: 0.9rem;
+    word-break: break-all;
 }
 
 footer {
