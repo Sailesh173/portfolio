@@ -3,231 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sailesh Kumar Mishra — Full-Stack Architect</title>
-    <meta name="description" content="Portfolio of Sailesh Kumar Mishra — Full-Stack Engineer, MERN Stack Expert, and SAP Certified Developer.">
+    <title>Sailesh Kumar Mishra | Digital Architect</title>
+    <meta name="description" content="Advanced Digital Portfolio of Sailesh Kumar Mishra — Full-Stack Engineer & SAP Certified Developer.">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.157.0/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="bg3d"></canvas>
+    <div class="noise"></div>
+    <div class="cursor"></div>
 
-    <!-- HEADER -->
     <header>
         <div class="wrap">
-            <a class="logo" href="#">sailesh<span>.</span></a>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#certs">Certifications</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="nav-box">
+                <a href="#" class="tech-label" style="margin:0; text-decoration:none;">SAILESH // ARCHITECT</a>
+                <nav class="nav-links">
+                    <a href="#about">Identity</a>
+                    <a href="#projects">Work</a>
+                    <a href="#certs">Honors</a>
+                    <a href="#contact">Bridge</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-gradient"></div>
-        <div class="hero-bg-gradient-2"></div>
-        <div class="wrap hero-content">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Available for collaboration
-            </div>
-            <h1>
-                Hi, I'm <span class="highlight">Sailesh<br>Kumar Mishra</span>
-            </h1>
-            <p class="hero-desc">
-                Full-Stack Engineer crafting high-performance digital ecosystems. 
-                B.Tech CSE at Silicon Institute of Technology. 
-                I build things that matter.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View My Work →</a>
-                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="wrap">
-            <span class="section-label">About Me</span>
-            <h2 class="section-title">Engineer. Builder. Problem Solver.</h2>
-            <div class="about-grid">
-                <p class="about-text">
-                    I'm a Computer Science student with a deep passion for building production-grade web applications. 
-                    My core expertise is in the MERN stack — MongoDB, Express, React, and Node.js — complemented by 
-                    hands-on experience in AI/ML integration, real-time communication with WebRTC, and cloud deployment.
-                    <br><br>
-                    I believe great software lives at the intersection of solid engineering and beautiful design. 
-                    Every project I build is crafted with scalability, performance, and user experience in mind.
-                </p>
-                <div class="stat-cards">
-                    <div class="stat-card">
-                        <h3>4+</h3>
-                        <p>Projects Built</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>MERN</h3>
-                        <p>Core Stack</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>SAP</h3>
-                        <p>Certified Dev</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>AI/ML</h3>
-                        <p>Integration</p>
-                    </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="wrap">
+                <p class="tech-label" style="justify-content: center;">SYS_STATUS: ACTIVE</p>
+                <h1>SAILESH</h1>
+                <p class="hero-desc">Engineering premium digital ecosystems with precision, passion, and state-of-the-art architectures.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 4rem;">
+                    <a href="#projects" class="project-btn">PROJECTS_LOG</a>
+                    <a href="#contact" class="project-btn" style="background:transparent; border:1px solid var(--border); color:#fff;">INITIATE_CONTACT</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="wrap">
-            <span class="section-label">Featured Work</span>
-            <h2 class="section-title">Projects I've Built</h2>
-            <p class="section-desc">Real systems solving real problems — from healthcare AI to smart city infrastructure.</p>
-
-            <div class="project-list">
-                <!-- Project 1: MedLink AI -->
-                <div class="project-item">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="project-info">
-                        <span class="project-num">PROJECT 01</span>
-                        <h3>MedLink AI</h3>
-                        <p>A full-stack healthcare platform with AI-powered symptom analysis using Groq LLM, real-time doctor-patient video consultations via WebRTC, and role-based dashboards.</p>
-                        <div class="tag-row">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">WebRTC</span>
-                            <span class="tag">Groq AI</span>
+        <!-- Identity Section -->
+        <section id="about">
+            <div class="wrap">
+                <div class="glass-card brackets">
+                    <p class="tech-label">01 // IDENTITY_CORE</p>
+                    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 6rem; align-items: center;">
+                        <div>
+                            <h2 style="font-size: 4rem; margin-bottom: 2rem;">Digital Architect</h2>
+                            <p style="font-size: 1.6rem; color: var(--text-dim); line-height: 1.8;">Full-Stack Engineer & B.Tech CSE student at Silicon Institute. Specializing in MERN, AI/ML, and cinematic front-end precision.</p>
                         </div>
-                        <a href="https://github.com/Sailesh173" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 2: Smart Traffic -->
-                <div class="project-item">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=80')"></div>
-                    <div class="project-info">
-                        <span class="project-num">PROJECT 02</span>
-                        <h3>Smart Traffic Intelligence</h3>
-                        <p>An ML-powered traffic management system using YOLO for real-time vehicle detection and signal optimization to reduce urban congestion.</p>
-                        <div class="tag-row">
-                            <span class="tag">Python</span>
-                            <span class="tag">YOLO</span>
-                            <span class="tag">OpenCV</span>
-                            <span class="tag">Deep Learning</span>
+                        <div style="display: grid; gap: 3rem;">
+                            <div style="border-left: 3px solid var(--accent); padding-left: 2rem;">
+                                <h4 style="font-size: 2.5rem; color: var(--accent);">SAP</h4>
+                                <p style="color: var(--text-dim); letter-spacing: 2px;">CERTIFIED DEV</p>
+                            </div>
+                            <div style="border-left: 3px solid var(--accent); padding-left: 2rem;">
+                                <h4 style="font-size: 2.5rem; color: var(--accent);">MERN</h4>
+                                <p style="color: var(--text-dim); letter-spacing: 2px;">CORE_STACK</p>
+                            </div>
                         </div>
-                        <a href="https://github.com/Sailesh173" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 3: HealthTrack -->
-                <div class="project-item">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="project-info">
-                        <span class="project-num">PROJECT 03</span>
-                        <h3>HealthTrack AI</h3>
-                        <p>A personalized fitness intelligence engine that predicts health metrics and generates meal plans using OpenAI integration.</p>
-                        <div class="tag-row">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">OpenAI</span>
-                            <span class="tag">Tailwind</span>
-                        </div>
-                        <a href="https://github.com/Sailesh173" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Artisan Market -->
-                <div class="project-item">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="project-info">
-                        <span class="project-num">PROJECT 04</span>
-                        <h3>Artisan Marketplace</h3>
-                        <p>A role-based e-commerce platform for artisan goods, optimized with Redis caching for speed and JWT-based authentication for security.</p>
-                        <div class="tag-row">
-                            <span class="tag">React</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">JWT</span>
-                        </div>
-                        <a href="https://github.com/Sailesh173" target="_blank" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-        <div class="wrap">
-            <span class="section-label">Certifications & Honors</span>
-            <h2 class="section-title">Credentials</h2>
-            <p class="section-desc">Validated expertise across enterprise and cutting-edge technology stacks.</p>
-
-            <div class="cert-list">
-                <div class="cert-item">
-                    <h4>SAP Certified Associate</h4>
-                    <p>Back-End Developer specializing in high-performance cloud-native application architecture.</p>
-                    <p class="cert-org">SAP Global Certification</p>
-                </div>
-                <div class="cert-item">
-                    <h4>Full-Stack MERN Expertise</h4>
-                    <p>Demonstrated mastery in building scalable, production-ready web ecosystems from database to deployment.</p>
-                    <p class="cert-org">Self-Certified Engineer</p>
-                </div>
-                <div class="cert-item">
-                    <h4>AI & Computer Vision</h4>
-                    <p>Specialized in deep learning, YOLO object detection, and integrating generative AI APIs into production systems.</p>
-                    <p class="cert-org">Project-Based Expertise</p>
+        <!-- Work Section -->
+        <section id="projects">
+            <div class="wrap">
+                <p class="tech-label">02 // DEPLOYED_ASSETS</p>
+                <h2 style="font-size: 5rem; margin-bottom: 6rem;">Featured Work</h2>
+                
+                <div class="project-list">
+                    <!-- Project 1 -->
+                    <div class="project-item brackets">
+                        <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200')"></div>
+                        <div class="project-content">
+                            <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">MedLink AI</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">EXPLORE_CODE</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-item brackets">
+                        <div class="project-bg" style="background-image: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=1200')"></div>
+                        <div class="project-content">
+                            <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Smart Traffic</h3>
+                            <a href="https://github.com/Sailesh173" class="project-btn">VIEW_INTEL</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-        <div class="wrap">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Let's Build Something Great</h2>
-            <p class="section-desc">I'm always open to new opportunities, collaborations, and interesting conversations about technology.</p>
-
-            <div class="contact-grid">
-                <a href="mailto:saileshmishra2760@gmail.com" class="contact-method">
-                    <div class="contact-icon">✉</div>
-                    <h4>Email</h4>
-                    <p>saileshmishra2760@gmail.com</p>
-                </a>
-                <a href="tel:+918144255945" class="contact-method">
-                    <div class="contact-icon">📱</div>
-                    <h4>Phone</h4>
-                    <p>+91 8144255945</p>
-                </a>
-                <a href="https://www.linkedin.com/feed/" target="_blank" class="contact-method">
-                    <div class="contact-icon">💼</div>
-                    <h4>LinkedIn</h4>
-                    <p>Connect with me →</p>
-                </a>
-                <a href="https://github.com/Sailesh173" target="_blank" class="contact-method">
-                    <div class="contact-icon">⚡</div>
-                    <h4>GitHub</h4>
-                    <p>View my code →</p>
-                </a>
+        <!-- Honors Section -->
+        <section id="certs">
+            <div class="wrap">
+                <p class="tech-label">03 // HALL_OF_HONORS</p>
+                <div class="cert-grid">
+                    <div class="glass-card brackets">
+                        <h4>SAP Certified</h4>
+                        <p style="color: var(--text-dim); margin-top: 1rem;">Associate Back-End Developer specializing in cloud architectures.</p>
+                    </div>
+                    <div class="glass-card brackets">
+                        <h4>MERN Excellence</h4>
+                        <p style="color: var(--text-dim); margin-top: 1rem;">Certified mastery in building scalable web ecosystems.</p>
+                    </div>
+                    <div class="glass-card brackets">
+                        <h4>AI / ML Vision</h4>
+                        <p style="color: var(--text-dim); margin-top: 1rem;">Specialized in deep learning and real-time computer vision.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="wrap">
-            <p>© 2026 Sailesh Kumar Mishra. Built with precision.</p>
-        </div>
-    </footer>
+        <!-- Bridge Section -->
+        <section id="contact">
+            <div class="wrap">
+                <p class="tech-label">04 // INITIATE_BRIDGE</p>
+                <div class="contact-grid">
+                    <a href="mailto:saileshmishra2760@gmail.com" class="contact-method brackets">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">EMAIL</h4>
+                        <p>saileshmishra2760@gmail.com</p>
+                    </a>
+                    <a href="tel:+918144255945" class="contact-method brackets">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">PHONE</h4>
+                        <p>+91 8144255945</p>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="contact-method brackets">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">LINKEDIN</h4>
+                        <p>Connect with me →</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="main.js"></script>
 </body>

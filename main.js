@@ -142,4 +142,36 @@ document.addEventListener('DOMContentLoaded', () => {
             link.style.color = link.getAttribute('href') === `#${current}` ? '#6366f1' : '';
         });
     });
+
+     // ---- INTERACTIVE CARD GLOWS ----
+    document.querySelectorAll('.glass-card, .contact-method').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--mouse-x', `${x}%`);
+            card.style.setProperty('--mouse-y', `${y}%`);
+        });
+    });
+
+    // Custom Cursor Logic
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1
+        });
+    });
+
+    // Hover Scaling
+    const interactives = document.querySelectorAll('a, .glass-card, .project-item');
+    interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { scale: 4, backgroundColor: 'rgba(0, 242, 254, 0.2)', duration: 0.3 });
+        });
+        el.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { scale: 1, backgroundColor: '#00f2fe', duration: 0.3 });
+        });
+    });
 });
