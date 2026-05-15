@@ -1,62 +1,50 @@
-/* 
-    Sailesh Kumar - Cyber Architect Core
+/*
+    Sailesh Kumar Mishra - Interaction Layer v10.0
+    Clean, safe animations — content always visible
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Icons
-    if (window.lucide) {
-        lucide.createIcons();
-    }
 
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.1
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
 
-    // Sidebar Navigation Highlighting
-    const contentPanel = document.querySelector('.content-panel');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.side-nav a');
+    // Subtle hover tilt effect on project cards
+    document.querySelectorAll('.project-item').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
+            card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${y}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0)';
+        });
+    });
 
-    contentPanel.addEventListener('scroll', () => {
-        let current = '';
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY + 200;
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (contentPanel.scrollTop >= sectionTop - 100) {
-                current = section.getAttribute('id');
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            const link = document.querySelector(`nav a[href="#${id}"]`);
+            if (link) {
+                if (scrollY >= top && scrollY < top + height) {
+                    link.style.color = '#6366f1';
+                } else {
+                    link.style.color = '';
+                }
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Hover Scaling for Cursor
-    const interactives = document.querySelectorAll('a, .bento-card, .skill-tag');
-    interactives.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            gsap.to(cursor, { scale: 4, duration: 0.3 });
-        });
-        el.addEventListener('mouseleave', () => {
-            gsap.to(cursor, { scale: 1, duration: 0.3 });
-        });
-    });
-
-    // Bento Card Entrance
-    gsap.from('.bento-card', {
-        opacity: 0,
-        y: 50,
-        stagger: 0.1,
-        duration: 1,
-        ease: "power4.out"
     });
 });
